@@ -56,7 +56,13 @@
         <button onclick="downloadImage()">Bild herunterladen</button>
     </div>
 
-    <audio id="backgroundMusic" src="Sigma.mp3" autoplay loop></audio>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="audio/Sigma.mp3" type="audio/mpeg">
+        <source src="audio/Sigma.ogg" type="audio/ogg">
+        <source src="audio/Sigma.wav" type="audio/wav">
+        Ihr Browser unterstützt das Audioelement nicht.
+    </audio>
+    
 
     <script>
         function downloadImage() {
