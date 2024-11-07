@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sigmas sind Geil</title>
+    <title>Passwortgeschützte Seite</title>
     <style>
         body {
             background-image: url('https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg');
@@ -30,30 +30,53 @@
         video {
             margin-bottom: 20px;
         }
+
+        #content {
+            display: none; /* Der geschützte Inhalt wird anfangs versteckt */
+        }
     </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "Wir-lieben-Sigmas") {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("login").style.display = "none";
+            } else {
+                alert("Falsches Passwort, bitte erneut versuchen!");
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Wilkommen auf der <strong>Giga Chad Seite (:</strong></h1>
+    <div id="login">
+        <h1>Bitte Passwort eingeben</h1>
+        <input type="password" id="password" placeholder="Passwort">
+        <button onclick="checkPassword()">Einloggen</button>
+    </div>
 
-    <div class="container">
-        <p><strong>Ihr fragt euch sicher "Was ist das?".</strong> Das ist eine Webseite, die selbst erstellt und gecodet wurde für die <br>
-        Giga-Chad-Company ;).<br>
-        Ihr könnt euch entspannt die neuesten Bilder reinziehen! Doch ein kleiner Tipp: Wenn ihr die Bilder für nur 50ct in der Schule kauft, bekommt ihr sie 5 Tage vor Release-Date!</p>
-        
-        <p>Viel Spaß mit den ersten Bildern! :)</p>
+    <div id="content">
+        <h1>Wilkommen auf der <strong>Giga Chad Seite (:</strong></h1>
 
-        <video width="600" controls>
-            <source src="Sigma Intro webseite.mp4" type="video/quicktime">
-            Sorry, ihr Browser unterstützt das Videoformat leider nicht. :(
-        </video>
+        <div class="container">
+            <p><strong>Ihr fragt euch sicher "Was ist das?".</strong> Das ist eine Webseite, die selbst erstellt und gecodet wurde für die <br>
+            Giga-Chad-Company ;).<br>
+            Ihr könnt euch entspannt die neuesten Bilder reinziehen! Doch ein kleiner Tipp: Wenn ihr die Bilder für nur 50ct in der Schule kauft, bekommt ihr sie 5 Tage vor Release-Date!</p>
+            
+            <p>Viel Spaß mit den ersten Bildern! :)</p>
 
-        <p>Und hier kommt Bild auf Platz Nr. 1!</p>
-        
-        <img id="meinBild" src="https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg" width="600">
-        
-        <br>
-        
-        <button onclick="downloadImage()">Bild herunterladen</button>
+            <video width="600" controls>
+                <source src="Sigma Intro webseite.mp4" type="video/quicktime">
+                Sorry, ihr Browser unterstützt das Videoformat leider nicht. :(
+            </video>
+
+            <p>Und hier kommt Bild auf Platz Nr. 1!</p>
+            
+            <img id="meinBild" src="https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg" width="600">
+            
+            <br>
+            
+            <button onclick="downloadImage()">Bild herunterladen</button>
+        </div>
     </div>
 
     <script>
@@ -68,4 +91,3 @@
     </script>
 </body>
 </html>
-
