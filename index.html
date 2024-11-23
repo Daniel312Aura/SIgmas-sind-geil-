@@ -4,92 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giga Chad Seite</title>
-    <!-- Eingebettetes CSS -->
+
+    <!-- Material Design Lite CSS -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <!-- Custom CSS -->
     <style>
         body {
-            background-image: url('https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg');
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab5f3851-1ad2-4f23-bd57-878d967ba806/df6gxgc-d2854e45-fd1d-4201-9f6c-2cd81f5ed570.jpg/v1/fill/w_894,h_894,q_70,strp/giga_chad_2_by_loji007_df6gxgc-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTkyMCIsInBhdGgiOiJcL2ZcL2FiNWYzODUxLTFhZDItNGYyMy1iZDU3LTg3OGQ5NjdiYTgwNlwvZGY2Z3hnYy1kMjg1NGU0NS1mZDFkLTQyMDEtOWY2Yy0yY2Q4MWY1ZWQ1NzAuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ._RsbJEQxcNdXykIQbPCZJOaoBImQDbnarPt3XICIiH8');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             height: 100vh;
             margin: 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            color: #fff; /* Einheitliche Textfarbe */
         }
 
-        body * {
-            color: red;
-        }
-
-        .container {
-            margin-top: 20px;
-        }
-
-        video {
-            margin-bottom: 20px;
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            text-align: center; /* Zentriert den Inhalt */
         }
 
         header {
-            height: 150px;
-            color: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         button {
             font-size: 16px;
             padding: 10px 20px;
             margin: 10px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .mdl-layout__header {
+            background-color: transparent !important;
         }
     </style>
-    <!-- Eingebettetes JavaScript -->
+</head>
+<body>
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Sonstiges</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="https://www.pinnwand4u.de/daniel">Virtuelle Pinnwand</a>
+            <a class="mdl-navigation__link" href="Impessum.html">Impressum</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title"></span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Sorry</a>
+          <a class="mdl-navigation__link" href="">wir</a>
+          <a class="mdl-navigation__link" href="">haben</a>
+          <a class="mdl-navigation__link" href="">noch nix :(</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="main-content">
+          <h1>Wilkommen auf der <strong>Giga Chad Seite (:</strong></h1>
+          <div class="container">
+              <p><strong>Ihr fragt euch sicher "Was ist das?".</strong> Das ist eine Webseite, die selbst erstellt und gecodet wurde für die Giga-Chad-Company ;).</p>
+              <p>Viel Spaß mit den ersten Bildern! :)</p>
+              <p>Und hier kommt Bild auf Platz Nr. 1!</p>
+              <img id="meinBild" src="https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg">
+              <br>
+              <button class="download-button" onclick="downloadImage()">Download</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        function downloadImage() {
+        async function downloadImage() {
+            const imageUrl = document.getElementById('meinBild').src;
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
             const link = document.createElement('a');
-            link.href = document.getElementById('meinBild').src;
-            link.setAttribute('download', 'mein_bild.jpg');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'mein_bild.jpg';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
     </script>
-</head>
-<body>
-    <header>
-        <a href="comic.html"><button>Comics</button></a><a href="Impessum.html"><button>impressum/Quellen</button></a>
-    </header>
-
-    <h1>Wilkommen auf der <strong>Giga Chad Seite (:</strong></h1>
-
-    <div class="container">
-        <p><strong>Ihr fragt euch sicher "Was ist das?".</strong> Das ist eine Webseite, die selbst erstellt und gecodet wurde für die <br>
-        Giga-Chad-Company ;).<br>
-        Ihr könnt euch entspannt die neuesten Bilder reinziehen! Doch ein kleiner Tipp: Wenn ihr die Bilder für nur 50ct in der Schule kauft, bekommt ihr sie 5 Tage vor Release-Date!</p>
-        
-        <p>Viel Spaß mit den ersten Bildern! :)</p>
-
-       
-
-        <p>Und hier kommt Bild auf Platz Nr. 1!</p>
-        
-        <img id="meinBild" src="https://static.printler.com/cache/e/6/b/8/8/b/e6b88b752f39ca477307d62de788f69ae87f7854.jpg" width="600">
-        
-        <br>
-        
-        <button onclick="downloadImage()">Bild herunterladen</button>
-    </div>
-
-    <!-- Hintergrundmusik -->
-    <audio id="backgroundMusic" src="audio/audio/Sigma.mp3" autoplay loop></audio>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-             }
-            </style> 
-
 </body>
 </html>
-
-
